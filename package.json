@@ -1,0 +1,13 @@
+{
+  "name": "@nteract/install-sh",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "lint": "node --check api/index.js && node --check lib/script.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
