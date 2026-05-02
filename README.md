@@ -6,6 +6,11 @@ nteract Linux installer.
 The endpoint intentionally stays separate from the marketing site. It serves
 plain shell, not HTML, and it does not install agent-specific integrations.
 
+The bootstrap currently downloads the merged desktop installer from
+`raw.githubusercontent.com/nteract/desktop/main/scripts/install-linux-release`.
+If desktop releases later publish the installer as a release asset, switch the
+bootstrap URL to that immutable release asset.
+
 ## Local development
 
 ```sh
@@ -29,8 +34,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.nteract.io | \
 
 ## Vercel domain setup
 
-Add `sh.nteract.io` to the Vercel project, then configure DNS for the `sh`
-subdomain using the CNAME target Vercel reports:
+`sh.nteract.io` is added to the `install-sh` Vercel project under the `nteract`
+team. If it ever needs to be recreated, add the domain to the Vercel project,
+then configure DNS for the `sh` subdomain using the CNAME target Vercel reports:
 
 ```sh
 vercel domains add sh.nteract.io
