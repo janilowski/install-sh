@@ -6,10 +6,9 @@ nteract Linux installer.
 The endpoint intentionally stays separate from the marketing site. It serves
 plain shell, not HTML, and it does not install agent-specific integrations.
 
-The bootstrap currently downloads the merged desktop installer from
-`raw.githubusercontent.com/nteract/desktop/main/scripts/install-linux-release`.
-If desktop releases later publish the installer as a release asset, switch the
-bootstrap URL to that immutable release asset.
+The bootstrap dynamically fetches the latest stable release's
+`install-linux-release` asset from GitHub releases. Falls back to the main
+branch version if the API call fails.
 
 ## Local development
 
